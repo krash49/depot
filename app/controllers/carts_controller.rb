@@ -60,6 +60,7 @@ rescue_from ActiveRecord::RecordNotFound , with: :invalid_cart
     respond_to do |format|
       format.html { redirect_to store_index_url,
         notice: 'Your cart is currently empty' }
+      format.js 
       format.json { head :no_content }
     end
   end
