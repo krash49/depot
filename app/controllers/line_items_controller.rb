@@ -33,7 +33,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to store_index_url, notice: notice_massage }
-      format.js
+      format.js   { @current_item = @line_item }
 
     end
   end
