@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create, :destroy]
+  before_action :set_cart, only: [:create, :destroy, :edit_quantity]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy, :edit_quantity]
   # GET /line_items
   # GET /line_items.json
@@ -30,7 +30,12 @@ class LineItemsController < ApplicationController
     else
       notice_massage = 'Line item = 1, for delete press "Delete position" '
     end
-    redirect_to store_index_path, notice: notice_massage
+
+    respond_to do |format|
+      format.html { redirect_to store_index_url, notice: notice_massage }
+      format.js   { @current_item = @line_item }
+
+    end
   end
 
   # GET /line_items/1/edit
