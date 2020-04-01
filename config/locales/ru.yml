@@ -1,0 +1,23 @@
+ru:
+  layouts:
+    application:
+      title: "Онлайн магазин"
+      home: "Домой"
+      questions: "Вопросы"
+      news: "Новости"
+      contact: "Контакты"
+      online_store: "Инет магаз"
+
+  store:
+    index:
+      title_html: "Ваш простой каталог"
+      add_to_cart: "Добавить в корзину"
+
+  number:
+    currency:
+      format:
+        unit: "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%n%u"
